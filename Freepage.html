@@ -3,17 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Tentang Kami - GMT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Freepage</title>
 </head>
 <body>
 
 <section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('LCPT\ \(1\).gif');">
-<header class="container mx-auto flex justify-between items-center p-6 md:p-8 relative z-10">
-    <img src="LOGO-GMT-WHITE-scaled-300x95.png" class="h-12 md:h-16">
+<header class="container mx-auto flex justify-between items-center p-4 md:p-6 lg:p-8 relative z-10">
+    <img src="LOGO-GMT-WHITE-scaled-300x95.png" class="h-10 md:h-12 lg:h-16">
+
+    <button id="mobileMenuBtn" class="md:hidden text-white">
+        <i class="fas fa-bars text-2xl"></i>
+    </button>
 
     <nav class="hidden md:block">
-        <ul class="flex gap-6 text-white right-4">
+        <ul class="flex gap-4 md:gap-6 text-white">
+            <li><a href="index.html" class="hover:text-gray-300 text-sm md:text-base">HOME</a></li>
+            <li><a href="Biodata.html" class="hover:text-gray-300 text-sm md:text-base">BIODATA</a></li>
+            <li><a href="Contact_Us.html" class="hover:text-gray-300 text-sm md:text-base">CONTACT US</a></li>
+            <li><a href="Post.html" class="hover:text-gray-300 text-sm md:text-base">POST</a></li>
+            <li><a href="Freepage.html" class="hover:text-gray-300 text-sm md:text-base">FREEPAGE</a></li>
+            <li>
+                <a href="tel:081227931294" class="text-white border border-white px-4 py-2 md:px-6 md:py-3 rounded-xl hover:bg-blue-600 transition text-sm md:text-base">
+                    0812-2793-1294
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <nav id="mobileNav" class="hidden fixed inset-0 bg-gray-900/95 z-50">
+        <div class="flex justify-end p-4">
+            <button id="closeMobileMenu" class="text-white">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col items-center justify-center h-full gap-6 text-white text-xl"> 
             <li><a href="index.html" class="hover:text-gray-300">HOME</a></li>
             <li><a href="Biodata.html" class="hover:text-gray-300">BIODATA</a></li>
             <li><a href="Contact_Us.html" class="hover:text-gray-300">CONTACT US</a></li>
@@ -29,28 +54,75 @@
 </header>
 </section>
 
+<section class="py-12 md:py-20 bg-gray-100">
+    <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-8 md:mb-12">
+        Galeri Kerajinan Tangan Saya
+    </h1>
 
-<footer class="w-full py-10 bg-white text-gray-700">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4 md:px-6">
 
-        <div class="flex gap-8 text-sm mb-6 md:mb-0">
-            <a href="index.html" class="hover:text-gray-900">HOME</a>
-            <a href="Biodata.html" class="hover:text-gray-900 font-bold">BIODATA</a>
-            <a href="Contact_Us.html" class="hover:text-gray-900">CONTACT US</a>
-            <a href="Post.html" class="hover:text-gray-900">POST</a>
-            <a href="Freepage.html" class="hover:text-gray-300">FREEPAGE</a>
-            <a href="https://fti.unai.edu/">FTI UNAI</a>
-            <a href="https://unai.edu/">UNAI</a>
-        </div>
+        <a href="item1.html" class="bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-4">
+            <img src="WhatsApp Image 2025-12-12 at 02.28.38.jpeg" class="rounded-lg h-48 w-full object-cover">
+            <h2 class="text-lg md:text-xl font-semibold mt-4">Forest Diorama with Torii Gate</h2>
+            <p class="text-gray-600 text-sm mt-1">Miniatur sebuah pohon dikelilingi bebatuan</p>
+        </a>
 
-        <div class="mb-10 md:mb-0">
-            <img src="ICON-GMTBLACK-150x150.png" class="w-10">
-        </div>
+        <a href="item2.html" class="bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-4">
+            <img src="WhatsApp Image 2025-12-12 at 02.28.55.jpeg" class="rounded-lg h-48 w-full object-cover">
+            <h2 class="text-lg md:text-xl font-semibold mt-4">Shadow Box Landscape Diorama Lamp</h2>
+            <p class="text-gray-600 text-sm mt-1">Lampu hias dengan landscape pepohonan dan rumput</p>
+        </a>
 
-        <div class="text-sm">© 2025 Gulabed Media Teknologi</div>
+        <a href="item3.html" class="bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 p-4">
+            <img src="WhatsApp Image 2025-12-12 at 02.29.01.jpeg" class="rounded-lg h-48 w-full object-cover">
+            <h2 class="text-lg md:text-xl font-semibold mt-4">Jack O' lantern lamp</h2>
+            <p class="text-gray-600 text-sm mt-1">Kerajinan lampu dengan tema Hallowen</p>
+        </a>
 
     </div>
+</section>
+
+<footer class="w-full py-8 md:py-10 bg-white text-gray-700">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col items-center gap-6">
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
+                <a href="index.html" class="hover:text-gray-500 transition">HOME</a>
+                <a href="Biodata.html" class="hover:text-gray-500 transition">BIODATA</a>
+                <a href="Contact_Us.html" class="hover:text-gray-500 transition">CONTACT US</a>
+                <a href="Post.html" class="hover:text-gray-500 transition">POST</a>
+                <a href="Freepage.html" class="hover:text-gray-500 transition">FREEPAGE</a>
+                <a href="https://fti.unai.edu/" class="hover:text-gray-500 transition">FTI UNAI</a>
+                <a href="https://unai.edu/" class="hover:text-gray-500 transition">UNAI</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <img src="ICON-GMTBLACK-150x150.png" class="w-8 h-8">
+                <span class="text-sm">© 2025 Gulabed Media Teknologi</span>
+            </div>
+        </div>
+    </div>
 </footer>
+
+<script>
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMobileMenu = document.getElementById('closeMobileMenu');
+    const mobileNav = document.getElementById('mobileNav');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileNav.classList.remove('hidden');
+    });
+
+    closeMobileMenu.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+    });
+
+    const mobileNavLinks = mobileNav.querySelectorAll('a');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.add('hidden');
+        });
+    });
+</script>
 
 </body>
 </html>

@@ -1,440 +1,418 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>santaorsatan</title>
 </head>
 <body>
     <section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('glb-media.png');">
-    <header class="container mx-auto flex justify-between items-center p-6 md:p-8 relative z-10">
-            <img src="LOGO-GMT-WHITE-scaled-300x95.png" alt="Gulabed Mediatek logo" class="h-12 md:h-16">
+        <header class="container mx-auto flex justify-between items-center p-4 md:p-6 lg:p-8 relative z-10">
+            <img src="LOGO-GMT-WHITE-scaled-300x95.png" alt="Gulabed Mediatek logo" class="h-10 md:h-12 lg:h-16">
 
-            <nav class="hidden md:block">
-                <ul class="flex gap-6 text-white right-4"> 
-                    <li><a href="index.html" class="hover:text-gray-300">HOME</a></li>
-                    <li><a href="Biodata.html" class="hover:text-gray-300">BIODATA</a></li>
-                    <li><a href="Contact_Us.html" class="hover:text-gray-300">CONTACT US</a></li>
-                    <li><a href="Post.html" class="hover:text-gray-300">POST</a></li>
-                    <li><a href="Freepage.html" class="hover:text-gray-300">FREEPAGE</a></li>
+            <button id="mobileMenuBtn" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <nav id="desktopNav" class="hidden md:block">
+                <ul class="flex gap-4 md:gap-6 text-white"> 
+                    <li><a href="index.html" class="hover:text-gray-300 text-sm md:text-base">HOME</a></li>
+                    <li><a href="Biodata.html" class="hover:text-gray-300 text-sm md:text-base">BIODATA</a></li>
+                    <li><a href="Contact_Us.html" class="hover:text-gray-300 text-sm md:text-base">CONTACT US</a></li>
+                    <li><a href="Post.html" class="hover:text-gray-300 text-sm md:text-base">POST</a></li>
+                    <li><a href="Freepage.html" class="hover:text-gray-300 text-sm md:text-base">FREEPAGE</a></li>
                     <li>
-                        <a href="tel:081227931294" class="text-white bg-white-600 backdrop-blur-sm border border-white px-6 py-3 rounded-xl hover:bg-blue-600 transition-all">
+                        <a href="tel:081227931294" class="text-white bg-white/20 backdrop-blur-sm border border-white px-4 py-2 md:px-6 md:py-3 rounded-xl hover:bg-blue-600 transition-all text-sm md:text-base">
                             0812-2793-1294
                         </a>
                     </li>
                 </ul>
             </nav>
 
-    </header>
-    <div class="absolute inset-0 flex items-center justify-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-white text-center px-4 drop-shadow-lg">
+            <nav id="mobileNav" class="hidden fixed inset-0 bg-gray-900/95 z-50">
+                <div class="flex justify-end p-4">
+                    <button id="closeMobileMenu" class="text-white">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <ul class="flex flex-col items-center justify-center h-full gap-6 text-white text-xl"> 
+                    <li><a href="index.html" class="hover:text-gray-300">HOME</a></li>
+                    <li><a href="Biodata.html" class="hover:text-gray-300">BIODATA</a></li>
+                    <li><a href="Contact_Us.html" class="hover:text-gray-300">CONTACT US</a></li>
+                    <li><a href="Post.html" class="hover:text-gray-300">POST</a></li>
+                    <li><a href="Freepage.html" class="hover:text-gray-300">FREEPAGE</a></li>
+                    <li>
+                        <a href="tel:081227931294" class="text-white bg-white/20 backdrop-blur-sm border border-white px-6 py-3 rounded-xl hover:bg-blue-600 transition-all">
+                            0812-2793-1294
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="absolute inset-0 flex items-center justify-center px-4">
+            <h1 class="text-2xl md:text-4xl lg:text-6xl font-bold text-white text-center drop-shadow-lg">
                 Software Development <br> & IT Consultant
             </h1>
-    </div>
+        </div>
     </section>
 
-    <section class="mt-16 mb-24 px-6 md:px-16">
-        <p class="text-center text-[15px]">BERBASIS KOTA SEMARANG, BERKOLABORASI KE SELURUH INDONESIA</p>
-        <p class="leading-loose text-center text-[30px]">Solusi dan Layanan IT yang Dapat Kami Berikan untuk Anda</p>
+    <section class="mt-12 md:mt-16 mb-16 md:mb-24 px-4 md:px-6 lg:px-16">
+        <p class="text-center text-sm md:text-base">BERBASIS KOTA SEMARANG, BERKOLABORASI KE SELURUH INDONESIA</p>
+        <p class="leading-loose text-center text-xl md:text-2xl lg:text-3xl mt-2">Solusi dan Layanan IT yang Dapat Kami Berikan untuk Anda</p>
 
-        <div class="flex justify-center mt-3 mb-12">
-            <div class="w-16 h-[3px] bg-blue-600 rounded-full"></div>
+        <div class="flex justify-center mt-3 mb-8 md:mb-12">
+            <div class="w-16 h-0.5 md:h-1 bg-blue-600 rounded-full"></div>
         </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
-
-        <div class="flex flex-col items-center">
-            <img src="web-design.png" alt="Website" class="w-full h-[380px] object-cover rounded-xl shadow-lg">
-
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-gray-900">Website</h3>
-
-            <p class="text-gray-600 text-center leading-relaxed">
-                Pembuatan Web Company Profile, Web Katalog, Web Commerce, Web Personal, Blog, Portal Berita, dan Web Custom Lainnya
-            </p>
-        </div>
-
-        <div class="flex flex-col items-center">
-            <img src="daniel-korpai-UIiWnE58U_o-unsplash-1-scaled.jpg" alt="Sistem Informasi" class="w-full h-[380px] object-cover rounded-xl shadow-lg">
-
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-gray-900">Sistem Informasi</h3>
-
-            <p class="text-gray-600 text-center leading-relaxed">
-                Pembuatan Sistem Inventory, Sistem Invoice, Learning Manajemen Sistem (LMS), Sistem Penggajian dan Sistem Custom Lainnya
-            </p>
-        </div>
-
-        <div class="flex flex-col items-center">
-            <img src="mika-baumeister-QIpLrHJiv2o-unsplash_1-scaled.jpg" alt="Aplikasi Mobile" class="w-full h-[380px] object-cover rounded-xl shadow-lg">
-
-            <h3 class="text-2xl font-semibold mt-6 mb-3 text-gray-900">Aplikasi Mobile</h3>
-
-            <p class="text-gray-600 text-center leading-relaxed">
-                Pembuatan Aplikasi Kasir (POS), Aplikasi Absensi, Aplikasi Monitoring, Aplikasi Pendataan, Aplikasi Internal, dan Aplikasi Custom Lainnya
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<section class="w-full py-24 bg-[#e7eef9]">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-
-        <p class="text-gray-700 text-sm mb-3">Gulabed Media Teknologi</p>
-
-        <div class="flex justify-center mb-6">
-            <div class="flex gap-1">
-                <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
-                <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
-                <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
-                <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
-                <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
-            </div>
-        </div>
-
-        <p class="text-[22px] md:text-[28px] leading-relaxed text-gray-800 px-4">
-            Kami tidak sekedar membuat web, sistem, atau aplikasi. Kami mendengar, 
-            menganalisa, memberikan konsultasi serta menemukan dan menyeguhkan solusi 
-            paling tepat untuk kebutuhan anda.
-        </p>
-
-        <div class="mt-10">
-            <a href="#"
-               class="inline-block border border-black px-6 py-3 rounded-xl text-gray-800 hover:bg-blue-600 hover:text-white transition-all">
-                Kontak Kami Sekarang
-            </a>
-        </div>
-    </div>
-</section>
-
-<section class="w-full py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-
-        <h2 class="text-3xl font-semibold text-center text-gray-900">
-            Portofolio Kami
-        </h2>
-
-        <div class="flex justify-center mt-3 mb-12">
-            <div class="w-16 h-[3px] bg-blue-600 rounded-full"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-            <div>
-                <img src="WhatsApp-Image-2025-08-01-at-16.37.27.jpeg" alt="Sistem Pembelian" class="w-full h-56 object-cover rounded-xl shadow-sm">
-                <h3 class="text-[30px] font-semibold mt-5">Sistem Pembelian</h3>
-                <p class="text-[20px] text-gray-600 mt-2 leading-relaxed">
-                    Pembuatan modul sistem pembelian dan inspeksi korporasi PT AAM
-                </p>
-            </div>
-
-            <div>
-                <img src="WhatsApp-Image-2025-08-01-at-16.58.52.jpeg" alt="Sistem Afiliasi" class="w-full h-56 object-cover rounded-xl shadow-sm">
-                <h3 class="text-[30px] font-semibold mt-5">Sistem Afiliasi</h3>
-                <p class="text-[20px] text-gray-600 mt-2 leading-relaxed">
-                    Implementasi Sistem Afiliasi dengan Dewan Masjid Indonesia (DMI)
-                </p>
-            </div>
-
-            <div>
-                <img src="WhatsApp-Image-2025-08-01-at-17.10.11.jpeg" alt="Sistem Monitoring" class="w-full h-56 object-cover rounded-xl shadow-sm">
-                <h3 class="text-[30px] font-semibold mt-5">Sistem Monitoring</h3>
-                <p class="text-[20px] text-gray-600 mt-2 leading-relaxed">
-                    Implementasi Sistem Monitoring Berbasis CCTV
-                </p>
-            </div>
-
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
-
-            <div>
-                <img src="Screenshot-2025-08-02-at-4.09.20-AM.png" alt="Sistem Pembelian" class="w-full h-56 object-cover rounded-xl shadow-sm">
-                <h3 class="text-[30px] font-semibold mt-5">Sistem Ketenagakerjaan</h3>
-                <p class="text-[20px] text-gray-600 mt-2 leading-relaxed">
-                    Rapat koordinasi dan implementasis Sistem Informasi Ketenagakerjaan Rembang
-                </p>
-            </div>
-
-            <div>
-                <img src="Screenshot-2025-08-02-at-4.14.42-AM.png" alt="Sistem Afiliasi" class="w-full h-56 object-cover rounded-xl shadow-sm">
-                <h3 class="text-[30px] font-semibold mt-5">Aplikasi Pelayanan</h3>
-                <p class="text-[20px] text-gray-600 mt-2 leading-relaxed">
-                    Implementasi Aplikasi Pelayanan Pemerintah Provinsi Jawa Tengah
-                </p>
-            </div>
-
-            <div>
-                <img src="glb-media.png" alt="Sistem Monitoring" class="w-full h-56 object-cover rounded-xl shadow-sm">
-                <h3 class="text-[30px] font-semibold mt-5">Web & Digital Marketing</h3>
-                <p class="text-[20px] text-gray-600 mt-2 leading-relaxed">
-                    Project pembuatan website dan menjalankan Ads untuk Dealer Honda
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="w-full py-24 bg-[#e7eef9]">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-        <p class="text-[22px] md:text-[28px] leading-relaxed text-gray-800">
-            DISKUSIKAN KEBUTUHAN ANDA, TEMUKAN SOLUSI BERSAMA KAMI
-        </p>
-
-        <div class="mt-10">
-            <a href="#"
-               class="bg-green-600 px-6 py-3 rounded-xl text-white">
-                WHATSAPP SEKARANG
-            </a>
-        </div>
-    </div>
-</section>
-
-<section class="w-full py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-
-        <h2 class="text-[32px] font-semibold text-center text-gray-900">
-            Kenapa Harus Kami?
-        </h2>
-
-        <div class="flex justify-center mt-3 mb-12">
-            <div class="w-16 h-[3px] bg-blue-600 rounded-full"></div>
-        </div>
-
-        <p class="text-[22px] text-center mt-4 leading-relaxed text-gray-700 max-w-4xl mx-auto">
-            Jika membuat aplikasi di GMT, Kami akan sediakan dashboard monitoring untuk seluruh anda,
-            agar anda dapat monitoring persentase progress secara realtime tiap harinya.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
-
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
             <div class="flex flex-col items-center">
-                <img src="Screenshot-2025-08-28-at-5.27.00-PM-2048x1165.png"
-                     alt="Webapp Komunitas"
-                     class="w-full h-auto rounded-xl shadow">
-
-                <h3 class="text-[28px] font-semibold mt-6 text-center">
-                    Webapp Komunitas
-                </h3>
-
-                <p class="text-[20px] text-gray-600 mt-3 text-center leading-relaxed">
-                    Monitoring dashboard Sistem Informasi Berbasis Web
-                    untuk komunitas rehabilitasi
+                <img src="web-design.png" alt="Website" class="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg">
+                <h3 class="text-xl md:text-2xl font-semibold mt-4 md:mt-6 mb-2 md:mb-3 text-gray-900">Website</h3>
+                <p class="text-gray-600 text-center leading-relaxed text-sm md:text-base">
+                    Pembuatan Web Company Profile, Web Katalog, Web Commerce, Web Personal, Blog, Portal Berita, dan Web Custom Lainnya
                 </p>
             </div>
 
             <div class="flex flex-col items-center">
-                <img src="Screenshot-2025-08-28-at-5.19.14-PM-2048x1169.png"
-                     alt="MyAbsen"
-                     class="w-full h-auto rounded-xl shadow">
-
-                <h3 class="text-[28px] font-semibold mt-6 text-center">
-                    Myabsen
-                </h3>
-
-                <p class="text-[20px] text-gray-600 mt-3 text-center leading-relaxed">
-                    Monitoring pembuatan aplikasi MyAbsen,
-                    Aplikasi absen berbasis mobile
+                <img src="daniel-korpai-UIiWnE58U_o-unsplash-1-scaled.jpg" alt="Sistem Informasi" class="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg">
+                <h3 class="text-xl md:text-2xl font-semibold mt-4 md:mt-6 mb-2 md:mb-3 text-gray-900">Sistem Informasi</h3>
+                <p class="text-gray-600 text-center leading-relaxed text-sm md:text-base">
+                    Pembuatan Sistem Inventory, Sistem Invoice, Learning Manajemen Sistem (LMS), Sistem Penggajian dan Sistem Custom Lainnya
                 </p>
             </div>
 
-        </div>
-
-    </div>
-</section>
-
-<section class="w-full py-24 bg-[#e7eef9]">
-
-    <h2 class="text-center text-3xl font-semibold mb-12 text-gray-900">
-        Client Kami
-    </h2>
-
-    <div class="relative max-w-6xl mx-auto px-6">
-
-        <button id="btnPrev"
-            class="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-lg w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 z-20">
-            <span class="text-2xl">&#8249;</span>
-        </button>
-
-        <div class="overflow-hidden w-full">
-            <div id="sliderTrack"
-                 class="flex items-center gap-16 transition-all duration-500">
-
-                <img src="LOGO-AAM-150x150.png" class="w-40 h-40 object-contain">
-                <img src="Logo_DMI-150x150.png" class="w-40 h-40 object-contain">
-                <img src="logo-jateng-150x150.png" class="w-40 h-40 object-contain">
-                <img src="rembang-2-120x150.png" class="w-40 h-40 object-contain">
-                <img src="jual-mac-150x150.png" class="w-40 h-40 object-contain">
-                <img src="pia-aging-150x150.png" class="w-40 h-40 object-contain">
-                <img src="amovet-150x150.png" class="w-40 h-40 object-contain">
-                <img src="kaltim-150x150.png" class="w-40 h-40 object-contain">
-
-                <img src="LOGO-AAM-150x150.png" class="w-40 h-40 object-contain">
-                <img src="Logo_DMI-150x150.png" class="w-40 h-40 object-contain">
-                <img src="logo-jateng-150x150.png" class="w-40 h-40 object-contain">
-                <img src="rembang-2-120x150.png" class="w-40 h-40 object-contain">
-                <img src="jual-mac-150x150.png" class="w-40 h-40 object-contain">
-                <img src="pia-aging-150x150.png" class="w-40 h-40 object-contain">
-                <img src="amovet-150x150.png" class="w-40 h-40 object-contain">
-                <img src="kaltim-150x150.png" class="w-40 h-40 object-contain">
-
+            <div class="flex flex-col items-center">
+                <img src="mika-baumeister-QIpLrHJiv2o-unsplash_1-scaled.jpg" alt="Aplikasi Mobile" class="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg">
+                <h3 class="text-xl md:text-2xl font-semibold mt-4 md:mt-6 mb-2 md:mb-3 text-gray-900">Aplikasi Mobile</h3>
+                <p class="text-gray-600 text-center leading-relaxed text-sm md:text-base">
+                    Pembuatan Aplikasi Kasir (POS), Aplikasi Absensi, Aplikasi Monitoring, Aplikasi Pendataan, Aplikasi Internal, dan Aplikasi Custom Lainnya
+                </p>
             </div>
         </div>
+    </section>
 
-        <button id="btnNext"
-            class="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-lg w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 z-20">
-            <span class="text-2xl">&#8250;</span>
-        </button>
-
-    </div>
-
-</section>
-
-<script>
-const slider = document.getElementById("sliderTrack");
-const next = document.getElementById("btnNext");
-const prev = document.getElementById("btnPrev");
-
-const itemWidth = 200;
-let position = 0;
-
-next.onclick = () => {
-    position -= itemWidth;
-    slider.style.transform = `translateX(${position}px)`;
-
-    if (Math.abs(position) >= itemWidth * 5) {
-        setTimeout(() => {
-            slider.style.transition = "none";
-            position = 0;
-            slider.style.transform = `translateX(0px)`;
-            setTimeout(() => slider.style.transition = "all 0.5s", 20);
-        }, 500);
-    }
-};
-
-prev.onclick = () => {
-    if (position === 0) {
-        slider.style.transition = "none";
-        position = -itemWidth * 5;
-        slider.style.transform = `translateX(${position}px)`;
-        setTimeout(() => slider.style.transition = "all 0.5s", 20);
-    }
-
-    position += itemWidth;
-    slider.style.transform = `translateX(${position}px)`;
-};
-</script>
-
-<section class="w-full py-24 px-6">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-    <div>
-      <img 
-        src="WhatsApp-Image-2025-08-01-at-16.56.59.jpeg" 
-        alt="Training Team"
-        class="rounded-2xl w-full shadow-lg object-cover"
-      >
-    </div>
-
-    <div class="space-y-6">
-
-      <h2 class="text-3xl font-semibold leading-snug text-gray-900">
-        Konsultasikan Kebutuhan Perusahaan Anda, Kami<br>
-        Tawarkan Solusi Terbaik
-      </h2>
-
-      <ul class="space-y-3 text-gray-700 text-lg">
-        <li class="flex items-start gap-3">
-          <span class="text-blue-600 text-xl">✔</span>
-          Meningkatkan produktivitas tim
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-600 text-xl">✔</span>
-          Mengurangi biaya operasional
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-600 text-xl">✔</span>
-          Menentukan pengambilan keputusan dengan tepat sesuai data
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-600 text-xl">✔</span>
-          Meningkatkan relationship dengan pelanggan
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-600 text-xl">✔</span>
-          Mengembangkan strategi baru berdasarkan data, bukan sekedar kira-kira
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-600 text-xl">✔</span>
-          Mengelola data dan dokumen digital secara aman
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-600 text-xl">✔</span>
-          Meminimalisir Human Error
-        </li>
-      </ul>
-
-      <a 
-        href="#kontak"
-        class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition">
-        Kontak kami
-      </a>
-
-    </div>
-
-  </div>
-</section>
-
-<section class="relative w-full h-screen bg-cover bg-center"
-    style="background-image: url('gambar\ kantor\ GMT.png');">
-
-    <div class="absolute inset-0 bg-black/40"></div>
-
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-20">
-        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-            Hubungi Kami
-        </h1>
-
-        <p class="text-lg md:text-2xl text-white max-w-3xl drop-shadow-md">
-            Mari jadwalkan untuk diskusi terkait kebutuhan <br>
-            web/sistem/app perusahaan anda
-        </p>
-
-        <a href="https://wa.me/6281234567890"
-           class="mt-6 px-8 py-3 border border-white rounded-xl text-white text-lg hover:bg-blue-700 transition">
-            Whatsapp
-        </a>
-    </div>
-</section>
-
-
-<footer class="w-full py-10 bg-white text-gray-700">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-
-        <div class="flex gap-8 text-sm mb-6 md:mb-0">
-            <a href="index.html" class="hover:text-gray-900">HOME</a>
-            <a href="Biodata.html" class="hover:text-gray-900">BIODATA</a>
-            <a href="Contact_Us.html" class="hover:text-gray-900">CONTACT US</a>
-            <a href="Post.html" class="hover:text-gray-900">POST</a>
-            <a href="Freepage.html" class="hover:text-gray-300">FREEPAGE</a>
-            <a href="https://fti.unai.edu/">FTI UNAI</a>
-            <a href="https://unai.edu/">UNAI</a>
+    <section class="w-full py-16 md:py-24 bg-blue-50">
+        <div class="max-w-4xl mx-auto px-4 md:px-6 text-center">
+            <p class="text-gray-700 text-sm mb-3">Gulabed Media Teknologi</p>
+            <div class="flex justify-center mb-6">
+                <div class="flex gap-1">
+                    <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                    <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                    <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                    <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                    <span class="w-2 h-2 bg-blue-600 rounded-full"></span>
+                </div>
+            </div>
+            <p class="text-lg md:text-xl lg:text-2xl leading-relaxed text-gray-800 px-4">
+                Kami tidak sekedar membuat web, sistem, atau aplikasi. Kami mendengar, 
+                menganalisa, memberikan konsultasi serta menemukan dan menyeguhkan solusi 
+                paling tepat untuk kebutuhan anda.
+            </p>
+            <div class="mt-10">
+                <a href="#"
+                   class="inline-block border border-gray-800 px-6 py-3 rounded-xl text-gray-800 hover:bg-blue-600 hover:text-white transition-all">
+                    Kontak Kami Sekarang
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="mb-10 md:mb-0">
-            <img src="ICON-GMTBLACK-150x150.png" alt="Logo" class="w-10">
+    <section class="w-full py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 md:px-6">
+            <h2 class="text-2xl md:text-3xl font-semibold text-center text-gray-900">
+                Portofolio Kami
+            </h2>
+            <div class="flex justify-center mt-3 mb-8 md:mb-12">
+                <div class="w-16 h-0.5 md:h-1 bg-blue-600 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div>
+                    <img src="WhatsApp-Image-2025-08-01-at-16.37.27.jpeg" alt="Sistem Pembelian" class="w-full h-48 md:h-56 object-cover rounded-xl shadow-sm">
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mt-4">Sistem Pembelian</h3>
+                    <p class="text-sm md:text-base text-gray-600 mt-2 leading-relaxed">
+                        Pembuatan modul sistem pembelian dan inspeksi korporasi PT AAM
+                    </p>
+                </div>
+                <div>
+                    <img src="WhatsApp-Image-2025-08-01-at-16.58.52.jpeg" alt="Sistem Afiliasi" class="w-full h-48 md:h-56 object-cover rounded-xl shadow-sm">
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mt-4">Sistem Afiliasi</h3>
+                    <p class="text-sm md:text-base text-gray-600 mt-2 leading-relaxed">
+                        Implementasi Sistem Afiliasi dengan Dewan Masjid Indonesia (DMI)
+                    </p>
+                </div>
+                <div>
+                    <img src="WhatsApp-Image-2025-08-01-at-17.10.11.jpeg" alt="Sistem Monitoring" class="w-full h-48 md:h-56 object-cover rounded-xl shadow-sm">
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mt-4">Sistem Monitoring</h3>
+                    <p class="text-sm md:text-base text-gray-600 mt-2 leading-relaxed">
+                        Implementasi Sistem Monitoring Berbasis CCTV
+                    </p>
+                </div>
+                <div>
+                    <img src="Screenshot-2025-08-02-at-4.09.20-AM.png" alt="Sistem Ketenagakerjaan" class="w-full h-48 md:h-56 object-cover rounded-xl shadow-sm">
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mt-4">Sistem Ketenagakerjaan</h3>
+                    <p class="text-sm md:text-base text-gray-600 mt-2 leading-relaxed">
+                        Rapat koordinasi dan implementasi Sistem Informasi Ketenagakerjaan Rembang
+                    </p>
+                </div>
+                <div>
+                    <img src="Screenshot-2025-08-02-at-4.14.42-AM.png" alt="Aplikasi Pelayanan" class="w-full h-48 md:h-56 object-cover rounded-xl shadow-sm">
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mt-4">Aplikasi Pelayanan</h3>
+                    <p class="text-sm md:text-base text-gray-600 mt-2 leading-relaxed">
+                        Implementasi Aplikasi Pelayanan Pemerintah Provinsi Jawa Tengah
+                    </p>
+                </div>
+                <div>
+                    <img src="glb-media.png" alt="Web & Digital Marketing" class="w-full h-48 md:h-56 object-cover rounded-xl shadow-sm">
+                    <h3 class="text-lg md:text-xl lg:text-2xl font-semibold mt-4">Web & Digital Marketing</h3>
+                    <p class="text-sm md:text-base text-gray-600 mt-2 leading-relaxed">
+                        Project pembuatan website dan menjalankan Ads untuk Dealer Honda
+                    </p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="text-sm">
-            © 2025 Gulabed Media Teknologi
+    <section class="w-full py-16 md:py-24 bg-blue-50">
+        <div class="max-w-4xl mx-auto px-4 md:px-6 text-center">
+            <p class="text-xl md:text-2xl lg:text-3xl leading-relaxed text-gray-800 font-medium">
+                DISKUSIKAN KEBUTUHAN ANDA, TEMUKAN SOLUSI BERSAMA KAMI
+            </p>
+            <div class="mt-10">
+                <a href="#"
+                   class="inline-block bg-green-600 hover:bg-green-700 px-8 py-3 rounded-xl text-white transition">
+                    WHATSAPP SEKARANG
+                </a>
+            </div>
         </div>
+    </section>
 
-    </div>
-</footer>
+    <section class="w-full py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 md:px-6">
+            <h2 class="text-2xl md:text-3xl font-semibold text-center text-gray-900">
+                Kenapa Harus Kami?
+            </h2>
+            <div class="flex justify-center mt-3 mb-8 md:mb-12">
+                <div class="w-16 h-0.5 md:h-1 bg-blue-600 rounded-full"></div>
+            </div>
+            <p class="text-lg md:text-xl text-center mt-4 leading-relaxed text-gray-700 max-w-4xl mx-auto">
+                Jika membuat aplikasi di GMT, Kami akan sediakan dashboard monitoring untuk seluruh anda,
+                agar anda dapat monitoring persentase progress secara realtime tiap harinya.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-12">
+                <div class="flex flex-col items-center">
+                    <img src="Screenshot-2025-08-28-at-5.27.00-PM-2048x1165.png"
+                         alt="Webapp Komunitas"
+                         class="w-full h-auto rounded-xl shadow-lg">
+                    <h3 class="text-xl md:text-2xl font-semibold mt-6 text-center">
+                        Webapp Komunitas
+                    </h3>
+                    <p class="text-sm md:text-base text-gray-600 mt-3 text-center leading-relaxed">
+                        Monitoring dashboard Sistem Informasi Berbasis Web
+                        untuk komunitas rehabilitasi
+                    </p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="Screenshot-2025-08-28-at-5.19.14-PM-2048x1169.png"
+                         alt="MyAbsen"
+                         class="w-full h-auto rounded-xl shadow-lg">
+                    <h3 class="text-xl md:text-2xl font-semibold mt-6 text-center">
+                        Myabsen
+                    </h3>
+                    <p class="text-sm md:text-base text-gray-600 mt-3 text-center leading-relaxed">
+                        Monitoring pembuatan aplikasi MyAbsen,
+                        Aplikasi absen berbasis mobile
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="w-full py-16 md:py-24 bg-blue-50 overflow-hidden">
+        <h2 class="text-center text-2xl md:text-3xl font-semibold mb-8 md:mb-12 text-gray-900">
+            Client Kami
+        </h2>
+        <div class="relative max-w-6xl mx-auto px-4 md:px-6">
+            <button id="btnPrev"
+                class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-lg w-10 h-10 rounded-full items-center justify-center hover:bg-gray-100 z-20">
+                <span class="text-2xl">&#8249;</span>
+            </button>
+            <button id="btnNext"
+                class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-lg w-10 h-10 rounded-full items-center justify-center hover:bg-gray-100 z-20">
+                <span class="text-2xl">&#8250;</span>
+            </button>
 
+            <div class="overflow-x-auto scrollbar-hide md:overflow-hidden">
+                <div id="sliderTrack" class="flex items-center gap-8 md:gap-16 transition-transform duration-500">
+                    <img src="LOGO-AAM-150x150.png" class="w-24 h-24 md:w-32 md:h-32 object-contain flex-shrink-0">
+                    <img src="Logo_DMI-150x150.png" class="w-24 h-24 md:w-32 md:h-32 object-contain flex-shrink-0">
+                    <img src="logo-jateng-150x150.png" class="w-24 h-24 md:w-32 md:h-32 object-contain flex-shrink-0">
+                    <img src="rembang-2-120x150.png" class="w-24 h-24 md:w-32 md:h-32 object-contain flex-shrink-0">
+                    <img src="jual-mac-150x150.png" class="w-24 h-24 md:w-32 md:h-32 object-contain flex-shrink-0">
+                    <img src="pia-aging-150x150.png" class="w-24 h-24 md:w-32 md:h-32 object-contain flex-shrink-0">
+                    <img src="amovet-150x150.png" class="w-24 h-24 md:w-32 md:h-32 object-contain flex-shrink-0">
+                    <img src="kaltim-150x150.png" class="w-24 h-24 md:w-32 md:h-32 object-contain flex-shrink-0">
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="w-full py-16 md:py-24 px-4 md:px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-2xl md:text-3xl font-semibold leading-snug text-gray-900">
+                    Konsultasikan Kebutuhan Perusahaan Anda, Kami<br>
+                    Tawarkan Solusi Terbaik
+                </h2>
+                <ul class="space-y-2 md:space-y-3 mt-6">
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <span class="text-blue-600 text-xl mt-1">✔</span>
+                        <span class="text-sm md:text-base">Meningkatkan produktivitas tim</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <span class="text-blue-600 text-xl mt-1">✔</span>
+                        <span class="text-sm md:text-base">Mengurangi biaya operasional</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <span class="text-blue-600 text-xl mt-1">✔</span>
+                        <span class="text-sm md:text-base">Menentukan pengambilan keputusan dengan tepat sesuai data</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <span class="text-blue-600 text-xl mt-1">✔</span>
+                        <span class="text-sm md:text-base">Meningkatkan relationship dengan pelanggan</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <span class="text-blue-600 text-xl mt-1">✔</span>
+                        <span class="text-sm md:text-base">Mengembangkan strategi baru berdasarkan data, bukan sekedar kira-kira</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <span class="text-blue-600 text-xl mt-1">✔</span>
+                        <span class="text-sm md:text-base">Mengelola data dan dokumen digital secara aman</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <span class="text-blue-600 text-xl mt-1">✔</span>
+                        <span class="text-sm md:text-base">Meminimalisir Human Error</span>
+                    </li>
+                </ul>
+                <a href="#kontak" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-8 py-3 rounded-lg text-base md:text-lg font-medium transition mt-6">
+                    Kontak kami
+                </a>
+            </div>
+            <div class="order-1 md:order-2">
+                <img 
+                    src="WhatsApp-Image-2025-08-01-at-16.56.59.jpeg" 
+                    alt="Training Team"
+                    class="rounded-2xl w-full shadow-lg object-cover"
+                >
+            </div>
+        </div>
+    </section>
+
+    <section class="relative w-full h-[60vh] md:h-screen bg-cover bg-center" style="background-image: url('gambar\ kantor\ GMT.png');">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-20">
+            <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+                Hubungi Kami
+            </h1>
+            <p class="text-base md:text-lg lg:text-xl text-white max-w-3xl drop-shadow-md">
+                Mari jadwalkan untuk diskusi terkait kebutuhan <br>
+                web/sistem/app perusahaan anda
+            </p>
+            <a href="https://wa.me/6281234567890"
+               class="mt-6 px-6 md:px-8 py-3 border border-white rounded-xl text-white text-base md:text-lg hover:bg-blue-600 transition">
+                Whatsapp
+            </a>
+        </div>
+    </section>
+
+    <footer class="w-full py-8 md:py-10 bg-white text-gray-700">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-sm">
+                    <a href="index.html" class="hover:text-gray-500 transition">HOME</a>
+                    <a href="Biodata.html" class="hover:text-gray-500 transition">BIODATA</a>
+                    <a href="Contact_Us.html" class="hover:text-gray-500 transition">CONTACT US</a>
+                    <a href="Post.html" class="hover:text-gray-500 transition">POST</a>
+                    <a href="Freepage.html" class="hover:text-gray-500 transition">FREEPAGE</a>
+                    <a href="https://fti.unai.edu/" class="hover:text-gray-500 transition">FTI UNAI</a>
+                    <a href="https://unai.edu/" class="hover:text-gray-500 transition">UNAI</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <img src="ICON-GMTBLACK-150x150.png" alt="Logo" class="w-8 h-8">
+                    <span class="text-sm">© 2025 Gulabed Media Teknologi</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileNav = document.getElementById('mobileNav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.remove('hidden');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileNav.classList.add('hidden');
+        });
+
+        const mobileNavLinks = mobileNav.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.add('hidden');
+            });
+        });
+
+        const slider = document.getElementById("sliderTrack");
+        const next = document.getElementById("btnNext");
+        const prev = document.getElementById("btnPrev");
+
+        if (window.innerWidth >= 768 && slider && next && prev) {
+            const itemWidth = 200;
+            let position = 0;
+
+            next.onclick = () => {
+                position -= itemWidth;
+                slider.style.transform = `translateX(${position}px)`;
+
+                if (Math.abs(position) >= itemWidth * 5) {
+                    setTimeout(() => {
+                        slider.style.transition = "none";
+                        position = 0;
+                        slider.style.transform = `translateX(0px)`;
+                        setTimeout(() => slider.style.transition = "transform 0.5s", 20);
+                    }, 500);
+                }
+            };
+
+            prev.onclick = () => {
+                if (position === 0) {
+                    slider.style.transition = "none";
+                    position = -itemWidth * 5;
+                    slider.style.transform = `translateX(${position}px)`;
+                    setTimeout(() => slider.style.transition = "transform 0.5s", 20);
+                }
+
+                position += itemWidth;
+                slider.style.transform = `translateX(${position}px)`;
+            };
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>

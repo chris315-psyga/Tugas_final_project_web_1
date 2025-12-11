@@ -3,71 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Tentang Kami - GMT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Biodata</title>
 </head>
+
 <body>
 
 <section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('LCPT\ \(1\).gif');">
-<header class="container mx-auto flex justify-between items-center p-6 md:p-8 relative z-10">
-    <img src="LOGO-GMT-WHITE-scaled-300x95.png" class="h-12 md:h-16">
+    <header class="absolute top-0 left-0 w-full flex justify-between items-center p-4 md:p-6 lg:p-8 z-20">
+        <img src="LOGO-GMT-WHITE-scaled-300x95.png" class="h-10 md:h-12 lg:h-16">
 
-    <nav class="hidden md:block">
-        <ul class="flex gap-6 text-white right-4">
-            <li><a href="index.html" class="hover:text-gray-300">HOME</a></li>
-            <li><a href="Biodata.html" class="hover:text-gray-300">BIODATA</a></li>
-            <li><a href="Contact_Us.html" class="hover:text-gray-300">CONTACT US</a></li>
-            <li><a href="Post.html" class="hover:text-gray-300">POST</a></li>
-            <li><a href="Freepage.html" class="hover:text-gray-300">FREEPAGE</a></li>
-            <li>
-                <a href="tel:081227931294" class="text-white border border-white px-6 py-3 rounded-xl hover:bg-blue-600 transition">
-                    0812-2793-1294
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
+        <nav class="hidden md:block">
+            <ul class="flex gap-4 md:gap-6 text-white">
+                <li><a href="index.html" class="hover:text-gray-300 text-sm md:text-base">HOME</a></li>
+                <li><a href="Biodata.html" class="hover:text-gray-300 text-sm md:text-base">BIODATA</a></li>
+                <li><a href="Contact_Us.html" class="hover:text-gray-300 text-sm md:text-base">CONTACT US</a></li>
+                <li><a href="Post.html" class="hover:text-gray-300 text-sm md:text-base">POST</a></li>
+                <li><a href="Freepage.html" class="hover:text-gray-300 text-sm md:text-base">FREEPAGE</a></li>
+                <li>
+                    <a href="tel:081227931294"
+                       class="text-white border border-white px-4 py-2 md:px-6 md:py-3 rounded-xl hover:bg-blue-600 transition text-sm md:text-base">
+                        0812-2793-1294
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <button id="menuBtn" class="md:hidden text-white text-2xl">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <div id="mobileMenu" class="hidden absolute top-20 right-4 md:right-6 bg-white/70 backdrop-blur-sm border border-blue-200/40 shadow-lg p-4 md:p-6 rounded-xl z-30 w-48 text-gray-800">
+        <a href="index.html" class="block py-2 hover:text-blue-600 text-sm">HOME</a>
+        <a href="Biodata.html" class="block py-2 hover:text-blue-600 text-sm">BIODATA</a>
+        <a href="Contact_Us.html" class="block py-2 hover:text-blue-600 text-sm">CONTACT US</a>
+        <a href="Post.html" class="block py-2 hover:text-blue-600 text-sm">POST</a>
+        <a href="Freepage.html" class="block py-2 hover:text-blue-600 text-sm">FREEPAGE</a>
+    </div>
+
 </section>
 
-<section class="w-full py-32 bg-gray-100">
-    <div class="max-w-4xl mx-auto px-10 text-center">
-        <h1 class="text-4xl font-bold text-gray-900 mb-6">Biodata</h1>
-        <div class="flex">
-            <div>
-                <img class="h-100 w-50 rounded-xl" src="Foto wajah gantengku.jpeg">
+<section class="w-full py-16 md:py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-4 md:px-6">
+
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12">
+            Biodata
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
+
+            <div class="flex justify-center">
+                <img class="h-56 md:h-72 w-48 md:w-56 object-cover rounded-xl shadow-lg shadow-[0_0_6px_rgba(0,180,255,0.5)]"
+                     src="Foto wajah gantengku.jpeg">
             </div>
-            <div class="ml-20 text-left text-x5 space-y-3">
-                <p>Nama : Chris Maruli Siagian</p>
-                <p>NIM : 2481004</p>
-                <p>Fakultar : Teknologi Informasi</p>
-                <p>Hobi : None</p>
-                <p>Keterampilan : None</p>
-            </div>   
+
+            <div class="bg-white/70 backdrop-blur-sm border border-blue-200/40 shadow-lg p-6 md:p-8 rounded-xl text-base md:text-lg space-y-3">
+                <p><strong>Nama</strong>: Chris Maruli Siagian</p>
+                <p><strong>NIM</strong>: 2481004</p>
+                <p><strong>Fakultas</strong>: Teknologi Informasi</p>
+                <p><strong>Hobi</strong>: Tidur, Membuat kerajinan tangan</p>
+                <p><strong>Keterampilan</strong>: Membuat kerajinan tangan</p>
+            </div>
+
         </div>
     </div>
 </section>
 
-<footer class="w-full py-10 bg-white text-gray-700">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+<section class="py-16 md:py-20 bg-gradient-to-b from-white to-gray-100 text-gray-900">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 text-center">
 
-        <div class="flex gap-8 text-sm mb-6 md:mb-0">
-            <a href="index.html" class="hover:text-gray-900">HOME</a>
-            <a href="Biodata.html" class="hover:text-gray-900 font-bold">BIODATA</a>
-            <a href="Contact_Us.html" class="hover:text-gray-900">CONTACT US</a>
-            <a href="Post.html" class="hover:text-gray-900">POST</a>
-            <a href="Freepage.html" class="hover:text-gray-300">FREEPAGE</a>
-            <a href="https://fti.unai.edu/">FTI UNAI</a>
-            <a href="https://unai.edu/">UNAI</a>
+        <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12">Testimoni</h2>
+
+        <div class="flec justify-center grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+
+            <div class="bg-white/70 backdrop-blur-sm border border-blue-200/40 shadow-lg p-4 md:p-6 rounded-xl hover:scale-105 transition-transform">
+                <p class="text-xs md:text-sm italic">Selama saya belajar Pemrograman Web, saya jadi bisa membuat web sendiri dengan style atau design sendiri atau nyontek lewat internet atau Youtube. 
+                    Hanya saja yang menjadi tantangannya adalah banyaknya properti untuk membuat suatu design yang bagus sehingga terkadang lupa atau bahkan tidak tahu bagaimana cara membuat ini tu jadi kayak begini dan itu jadi begitu.
+                    Apalagi untuk CSS yang bikin pusing dalam mengatur design web nya. 
+                    Namun Dengan adanya salah satu framework CSS yang bernama Tailwind ini saya jadi bisa membuat design Web dengan lebih mudah tanpa harus pusing berurusan dengan CSS Lucifer itu. 
+                    Terima kasih Tailwind, berkat kamu saya jadi tidak perlu lagi berurusan dengan CSS Lucifer itu, Saya jadi suka deh HAHAHAHAHAHAHAHAHA Mampus kau CSS.
+                    Selain itu ada satu tantangan lagi dalam kelas Pemrograman Web 1 ini yakni JAVASCRIIIIIIIIIPPPPPPT. 
+                </p>
+                <h4 class="mt-4 font-semibold text-blue-600">— Chris Maruli Siagian</h4>
+            </div>
+
         </div>
 
-        <div class="mb-10 md:mb-0">
-            <img src="ICON-GMTBLACK-150x150.png" class="w-10">
+    </div>
+</section>
+
+<footer class="w-full py-8 md:py-10 bg-white text-gray-700">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col items-center gap-6">
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
+                <a href="index.html" class="hover:text-gray-500 transition">HOME</a>
+                <a href="Biodata.html" class="hover:text-gray-500 transition">BIODATA</a>
+                <a href="Contact_Us.html" class="hover:text-gray-500 transition">CONTACT US</a>
+                <a href="Post.html" class="hover:text-gray-500 transition">POST</a>
+                <a href="Freepage.html" class="hover:text-gray-500 transition">FREEPAGE</a>
+                <a href="https://fti.unai.edu/" class="hover:text-gray-500 transition">FTI UNAI</a>
+                <a href="https://unai.edu/" class="hover:text-gray-500 transition">UNAI</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <img src="ICON-GMTBLACK-150x150.png" class="w-8 h-8">
+                <span class="text-sm">© 2025 Gulabed Media Teknologi</span>
+            </div>
         </div>
-
-        <div class="text-sm">© 2025 Gulabed Media Teknologi</div>
-
     </div>
 </footer>
+
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+</script>
 
 </body>
 </html>

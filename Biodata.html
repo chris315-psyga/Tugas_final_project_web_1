@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,7 +89,7 @@
 
         <h2 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12">Testimoni</h2>
 
-        <div class="flec justify-center grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div class="flex justify-center grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
 
             <div class="bg-white/70 backdrop-blur-sm border border-blue-200/40 shadow-lg p-4 md:p-6 rounded-xl hover:scale-105 transition-transform">
                 <p class="text-xs md:text-sm italic">Selama saya belajar Pemrograman Web, saya jadi bisa membuat web sendiri dengan style atau design sendiri atau nyontek lewat internet atau Youtube. 
@@ -127,23 +129,39 @@
 </footer>
 
 <script>
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const closeMobileMenu = document.getElementById('closeMobileMenu');
-    const mobileNav = document.getElementById('mobileNav');
+    document.addEventListener('DOMContentLoaded', function() {
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            const mobileNav = document.getElementById('mobileNav');
 
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileNav.classList.remove('hidden');
-    });
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    if (mobileNav) {
+                        mobileNav.classList.remove('hidden');
+                    }
+                });
+            }
 
-    closeMobileMenu.addEventListener('click', () => {
-        mobileNav.classList.add('hidden');
-    });
+            if (closeMobileMenu) {
+                closeMobileMenu.addEventListener('click', () => {
+                    if (mobileNav) {
+                        mobileNav.classList.add('hidden');
+                    }
+                });
+            }
 
-    const mobileNavLinks = mobileNav.querySelectorAll('a');
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileNav.classList.add('hidden');
-        });
+            if (mobileNav) {
+                const mobileNavLinks = mobileNav.querySelectorAll('a');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileNav.classList.add('hidden');
+                    });
+                });
+            }
+        }
+
+        initMobileMenu();
     });
 </script>
 

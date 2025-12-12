@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Contac Us</title>
+    <title>Contact Us</title>
 </head>
 <body>
 
@@ -151,66 +151,106 @@
 </footer>
 
 <script>
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const closeMobileMenu = document.getElementById('closeMobileMenu');
-const mobileNav = document.getElementById('mobileNav');
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            const mobileNav = document.getElementById('mobileNav');
 
-mobileMenuBtn.addEventListener('click', () => {
-    mobileNav.classList.remove('hidden');
-});
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    if (mobileNav) {
+                        mobileNav.classList.remove('hidden');
+                    }
+                });
+            }
 
-closeMobileMenu.addEventListener('click', () => {
-    mobileNav.classList.add('hidden');
-});
+            if (closeMobileMenu) {
+                closeMobileMenu.addEventListener('click', () => {
+                    if (mobileNav) {
+                        mobileNav.classList.add('hidden');
+                    }
+                });
+            }
 
-const mobileNavLinks = mobileNav.querySelectorAll('a');
-mobileNavLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileNav.classList.add('hidden');
+            if (mobileNav) {
+                const mobileNavLinks = mobileNav.querySelectorAll('a');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileNav.classList.add('hidden');
+                    });
+                });
+            }
+        }
+
+        function initRegistrationForm() {
+            const registrationForm = document.getElementById('registrationForm');
+            const successMessage = document.getElementById('successMessage');
+
+            if (!registrationForm) {
+                console.error('Registration form not found');
+                return;
+            }
+
+            registrationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById("name")?.value.trim() || '';
+                const nim = document.getElementById("nim")?.value.trim() || '';
+                const email = document.getElementById("email")?.value.trim() || '';
+                const faculty = document.getElementById("faculty")?.value.trim() || '';
+                const dob = document.getElementById("dob")?.value.trim() || '';
+                const gender = document.querySelector("input[name='gender']:checked");
+                const address = document.getElementById("address")?.value.trim() || '';
+                const phone = document.getElementById("phone")?.value.trim() || '';
+
+                if (!validateForm(name, nim, email, faculty, dob, gender, address, phone)) {
+                    return;
+                }
+
+                if (successMessage) {
+                    successMessage.classList.remove('hidden');
+                }
+
+                registrationForm.reset();
+
+                setTimeout(() => {
+                    if (successMessage) {
+                        successMessage.classList.add('hidden');
+                    }
+                }, 3000);
+            });
+        }
+
+        function validateForm(name, nim, email, faculty, dob, gender, address, phone) {
+            if (!name || !nim || !email || !faculty || !dob || !gender || !address || !phone) {
+                alert("Please fill in all fields.");
+                return false;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            if (!/^[0-9]+$/.test(phone)) {
+                alert("Phone number must contain only digits.");
+                return false;
+            }
+
+            if (phone.length < 10) {
+                alert("Phone number must be at least 10 digits.");
+                return false;
+            }
+
+            return true;
+        }
+
+        initMobileMenu();
+        initRegistrationForm();
     });
-});
-
-document.getElementById("registrationForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    let name = document.getElementById("name").value.trim();
-    let nim = document.getElementById("nim").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let faculty = document.getElementById("faculty").value.trim();
-    let dob = document.getElementById("dob").value.trim();
-    let gender = document.querySelector("input[name='gender']:checked");
-    let address = document.getElementById("address").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-
-    if (!name || !nim || !email || !faculty || !dob || !gender || !address || !phone) {
-        alert("Please fill in all fields.");
-        return;
-    }
-
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
-    }
-
-    if (!/^[0-9]+$/.test(phone)) {
-        alert("Phone number must contain only digits.");
-        return;
-    }
-
-    if (phone.length < 10) {
-        alert("Phone number must be at least 10 digits.");
-        return;
-    }
-
-    document.getElementById("successMessage").classList.remove("hidden");
-
-    document.getElementById("registrationForm").reset();
-
-    setTimeout(() => {
-        document.getElementById("successMessage").classList.add("hidden");
-    }, 3000);
-});
 </script>
 
 </body>

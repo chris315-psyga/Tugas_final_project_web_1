@@ -348,71 +348,109 @@
     </footer>
 
     <script>
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const closeMobileMenu = document.getElementById('closeMobileMenu');
-        const mobileNav = document.getElementById('mobileNav');
+        document.addEventListener('DOMContentLoaded', function() {
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileNav.classList.remove('hidden');
-        });
+            function initMobileMenu() {
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const closeMobileMenu = document.getElementById('closeMobileMenu');
+                const mobileNav = document.getElementById('mobileNav');
 
-        closeMobileMenu.addEventListener('click', () => {
-            mobileNav.classList.add('hidden');
-        });
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.addEventListener('click', () => {
+                        if (mobileNav) {
+                            mobileNav.classList.remove('hidden');
+                        }
+                    });
+                }
 
-        const mobileNavLinks = mobileNav.querySelectorAll('a');
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.add('hidden');
+                if (closeMobileMenu) {
+                    closeMobileMenu.addEventListener('click', () => {
+                        if (mobileNav) {
+                            mobileNav.classList.add('hidden');
+                        }
+                    });
+                }
+
+                if (mobileNav) {
+                    const mobileNavLinks = mobileNav.querySelectorAll('a');
+                    mobileNavLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                            mobileNav.classList.add('hidden');
+                        });
+                    });
+                }
+            }
+
+            function initSlider() {
+                const slider = document.getElementById("sliderTrack");
+                const next = document.getElementById("btnNext");
+                const prev = document.getElementById("btnPrev");
+
+                if (window.innerWidth >= 768 && slider && next && prev) {
+                    const itemWidth = 200;
+                    let position = 0;
+
+                    next.onclick = null;
+                    prev.onclick = null;
+
+                    next.onclick = () => {
+                        position -= itemWidth;
+                        slider.style.transform = `translateX(${position}px)`;
+
+                        if (Math.abs(position) >= itemWidth * 5) {
+                            setTimeout(() => {
+                                slider.style.transition = "none";
+                                position = 0;
+                                slider.style.transform = `translateX(0px)`;
+                                setTimeout(() => slider.style.transition = "transform 0.5s", 20);
+                            }, 500);
+                        }
+                    };
+
+                    prev.onclick = () => {
+                        if (position === 0) {
+                            slider.style.transition = "none";
+                            position = -itemWidth * 5;
+                            slider.style.transform = `translateX(${position}px)`;
+                            setTimeout(() => slider.style.transition = "transform 0.5s", 20);
+                        }
+
+                        position += itemWidth;
+                        slider.style.transform = `translateX(${position}px)`;
+                    };
+                }
+            }
+
+            function addScrollbarStyle() {
+                if (!document.getElementById('scrollbar-style')) {
+                    const style = document.createElement('style');
+                    style.id = 'scrollbar-style';
+                    style.textContent = `
+                        .scrollbar-hide::-webkit-scrollbar {
+                            display: none;
+                        }
+                        .scrollbar-hide {
+                            -ms-overflow-style: none; /* IE and Edge */
+                            scrollbar-width: none; /* Firefox */
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+            }
+
+            initMobileMenu();
+            initSlider();
+            addScrollbarStyle();
+
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    initSlider();
+                }, 250);
             });
+
         });
-
-        const slider = document.getElementById("sliderTrack");
-        const next = document.getElementById("btnNext");
-        const prev = document.getElementById("btnPrev");
-
-        if (window.innerWidth >= 768 && slider && next && prev) {
-            const itemWidth = 200;
-            let position = 0;
-
-            next.onclick = () => {
-                position -= itemWidth;
-                slider.style.transform = `translateX(${position}px)`;
-
-                if (Math.abs(position) >= itemWidth * 5) {
-                    setTimeout(() => {
-                        slider.style.transition = "none";
-                        position = 0;
-                        slider.style.transform = `translateX(0px)`;
-                        setTimeout(() => slider.style.transition = "transform 0.5s", 20);
-                    }, 500);
-                }
-            };
-
-            prev.onclick = () => {
-                if (position === 0) {
-                    slider.style.transition = "none";
-                    position = -itemWidth * 5;
-                    slider.style.transform = `translateX(${position}px)`;
-                    setTimeout(() => slider.style.transition = "transform 0.5s", 20);
-                }
-
-                position += itemWidth;
-                slider.style.transform = `translateX(${position}px)`;
-            };
-        }
-
-        const style = document.createElement('style');
-        style.textContent = `
-            .scrollbar-hide::-webkit-scrollbar {
-                display: none;
-            }
-            .scrollbar-hide {
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>

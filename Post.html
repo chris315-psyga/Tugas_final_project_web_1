@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,42 +105,76 @@
 </footer>
 
 <script>
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const closeMobileMenu = document.getElementById('closeMobileMenu');
-    const mobileNav = document.getElementById('mobileNav');
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            const mobileNav = document.getElementById('mobileNav');
 
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileNav.classList.remove('hidden');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    if (mobileNav) {
+                        mobileNav.classList.remove('hidden');
+                    }
+                });
+            }
+
+            if (closeMobileMenu) {
+                closeMobileMenu.addEventListener('click', () => {
+                    if (mobileNav) {
+                        mobileNav.classList.add('hidden');
+                    }
+                });
+            }
+
+            if (mobileNav) {
+                const mobileNavLinks = mobileNav.querySelectorAll('a');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileNav.classList.add('hidden');
+                    });
+                });
+            }
+        }
+
+        function fetchPostData() {
+            const loading = document.getElementById('loading');
+            const postContainer = document.getElementById('postContainer');
+            const errorMessage = document.getElementById('errorMessage');
+            const postId = document.getElementById('postId');
+            const postTitle = document.getElementById('postTitle');
+            const postBody = document.getElementById('postBody');
+
+            if (!loading || !postContainer || !errorMessage || !postId || !postTitle || !postBody) {
+                console.error('One or more required elements not found');
+                return;
+            }
+
+            fetch("https://jsonplaceholder.typicode.com/posts/4")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    loading.classList.add("hidden");
+                    postId.textContent = data.id;
+                    postTitle.textContent = data.title;
+                    postBody.textContent = data.body;
+                    postContainer.classList.remove("hidden");
+                })
+                .catch(error => {
+                    loading.classList.add("hidden");
+                    errorMessage.classList.remove("hidden");
+                    console.error('Error fetching post data:', error);
+                });
+        }
+
+        initMobileMenu();
+        fetchPostData();
     });
-
-    closeMobileMenu.addEventListener('click', () => {
-        mobileNav.classList.add('hidden');
-    });
-
-    const mobileNavLinks = mobileNav.querySelectorAll('a');
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileNav.classList.add('hidden');
-        });
-    });
-
-    const postNumber = 4;
-    const url = `https://jsonplaceholder.typicode.com/posts/`;
-
-    fetch("https://jsonplaceholder.typicode.com/posts/4")
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("loading").classList.add("hidden");
-
-            document.getElementById("postId").textContent = data.id;
-            document.getElementById("postTitle").textContent = data.title;
-            document.getElementById("postBody").textContent = data.body;
-            document.getElementById("postContainer").classList.remove("hidden");
-        })
-        .catch(error => {
-            document.getElementById("loading").classList.add("hidden");
-            document.getElementById("errorMessage").classList.remove("hidden");
-        });
 </script>
 
 </body>

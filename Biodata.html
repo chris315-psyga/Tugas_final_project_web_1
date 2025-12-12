@@ -11,7 +11,7 @@
 <body>
 
 <section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('LCPT\ \(1\).gif');">
-    <header class="absolute top-0 left-0 w-full flex justify-between items-center p-4 md:p-6 lg:p-8 z-20">
+    <header class="container mx-auto flex justify-between items-center p-4 md:p-6 lg:p-8 relative z-10">
         <img src="LOGO-GMT-WHITE-scaled-300x95.png" class="h-10 md:h-12 lg:h-16">
 
         <nav class="hidden md:block">
@@ -30,19 +30,30 @@
             </ul>
         </nav>
 
-        <button id="menuBtn" class="md:hidden text-white text-2xl">
-            <i class="fas fa-bars"></i>
+        <button id="mobileMenuBtn" class="md:hidden text-white">
+            <i class="fas fa-bars text-2xl"></i>
         </button>
     </header>
 
-    <div id="mobileMenu" class="hidden absolute top-20 right-4 md:right-6 bg-white/70 backdrop-blur-sm border border-blue-200/40 shadow-lg p-4 md:p-6 rounded-xl z-30 w-48 text-gray-800">
-        <a href="index.html" class="block py-2 hover:text-blue-600 text-sm">HOME</a>
-        <a href="Biodata.html" class="block py-2 hover:text-blue-600 text-sm">BIODATA</a>
-        <a href="Contact_Us.html" class="block py-2 hover:text-blue-600 text-sm">CONTACT US</a>
-        <a href="Post.html" class="block py-2 hover:text-blue-600 text-sm">POST</a>
-        <a href="Freepage.html" class="block py-2 hover:text-blue-600 text-sm">FREEPAGE</a>
-    </div>
-
+    <nav id="mobileNav" class="hidden fixed inset-0 bg-gray-900/95 z-50">
+        <div class="flex justify-end p-4">
+            <button id="closeMobileMenu" class="text-white">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col items-center justify-center h-full gap-6 text-white text-xl"> 
+            <li><a href="index.html" class="hover:text-gray-300">HOME</a></li>
+            <li><a href="Biodata.html" class="hover:text-gray-300">BIODATA</a></li>
+            <li><a href="Contact_Us.html" class="hover:text-gray-300">CONTACT US</a></li>
+            <li><a href="Post.html" class="hover:text-gray-300">POST</a></li>
+            <li><a href="Freepage.html" class="hover:text-gray-300">FREEPAGE</a></li>
+            <li>
+                <a href="tel:081227931294" class="text-white border border-white px-6 py-3 rounded-xl hover:bg-blue-600 transition">
+                    0812-2793-1294
+                </a>
+            </li>
+        </ul>
+    </nav>
 </section>
 
 <section class="w-full py-16 md:py-24 bg-white">
@@ -116,11 +127,23 @@
 </footer>
 
 <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMobileMenu = document.getElementById('closeMobileMenu');
+    const mobileNav = document.getElementById('mobileNav');
 
-    menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileNav.classList.remove('hidden');
+    });
+
+    closeMobileMenu.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+    });
+
+    const mobileNavLinks = mobileNav.querySelectorAll('a');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.add('hidden');
+        });
     });
 </script>
 
